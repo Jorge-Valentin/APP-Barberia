@@ -1,7 +1,7 @@
-package com.example.myapplication
+package com.example.myapplication.modelo
 
-import com.example.myapplication.Conexion.ejecutarConsulta
-import com.example.myapplication.Conexion.ejecutarSQL
+import com.example.myapplication.modelo.Conexion.ejecutarConsulta
+import com.example.myapplication.modelo.Conexion.ejecutarSQL
 import java.sql.SQLException
 
 class Cliente(val idCliente: Int, var nombreCliente: String, var apellidoCliente: String,

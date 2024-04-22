@@ -1,4 +1,4 @@
-package com.example.myapplication
+package com.example.myapplication.modelo
 
 import java.sql.Connection
 import java.sql.DriverManager
