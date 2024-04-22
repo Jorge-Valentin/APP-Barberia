@@ -1,3 +1,24 @@
 <resources>
     <string name="app_name">My Application</string>
+    <!-- STRINGS GENERALES -->
+    <string name="siglas_app">SWBB</string>
+    <string name="correo_electronico">Correo electrónico</string>
+    <string name="hint_correo_electronico">Escrive aquí tu e-mail</string>
+    <string name="password">Contraseña</string>
+    <string name="hint_password">Escrive aquí tu contraseña</string>
+    <!-- STRINGS LOGIN -->
+    <string name="login">Inicia Sesión</string>
+    <string name="olvido_password">¿Olvidó su contraseña?</string>
+    <string name="crear_password">¿No tienes cuenta? Créate una aquí</string>
+    <!-- STRINGS CREATEACCAOUNT -->
+    <string name="nombres">Nombres</string>
+    <string name="hint_nombres">Escribe aquí tus nombres</string>
+    <string name="apellidos">Apellidos</string>
+    <string name="hint_apellidos">Escribe aquí tus apellidos</string>
+    <string name="region">Región</string>
+    <string name="hint_region">Escribe aquí tu región</string>
+    <string name="ciudad">Ciudad</string>
+    <string name="hint_ciudad">Escribe aquí tu ciudad</string>
+    <string name="registrar_informacion">Registrar informacion</string>
+
 </resources>

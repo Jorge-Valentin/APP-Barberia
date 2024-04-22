@@ -1,7 +1,7 @@
-package com.example.myapplication
+package com.example.myapplication.modelo
 
-import com.example.myapplication.Conexion.ejecutarConsulta
-import com.example.myapplication.Conexion.ejecutarSQL
+import com.example.myapplication.modelo.Conexion.ejecutarConsulta
+import com.example.myapplication.modelo.Conexion.ejecutarSQL
 import java.sql.SQLException
 
 class Servicio(val idServicio: Int, var nombreServicio: String, var descripcionServicio: String,
@@ -27,7 +27,8 @@ class Servicio(val idServicio: Int, var nombreServicio: String, var descripcionS
                     val precio = resultSet.getDouble("precioServicio")
                     val estado = resultSet.getString("estadoServicio")
                     val idBarbero = resultSet.getInt("Barbero_idBarbero")
-                    listaServicios.add(Servicio(idServicio, nombre, descripcion, precio, estado, idBarbero)
+                    listaServicios.add(
+                        Servicio(idServicio, nombre, descripcion, precio, estado, idBarbero)
                     )
                 }
             } catch (e: SQLException) {
