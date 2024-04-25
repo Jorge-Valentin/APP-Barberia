@@ -7,54 +7,30 @@
     android:layout_height="match_parent"
     tools:context=".activities.CreateAccountActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/siglas_app"
-        android:textSize="35sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvClientes"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.062" />
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
-        android:layout_width="173dp"
-        android:layout_height="170dp"
-        app:cardCornerRadius="100dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.197"
-        tools:ignore="MissingConstraints">
-
-        <ImageView
-            android:id="@+id/imageView1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/user"
-            />
-
-    </androidx.cardview.widget.CardView>
+        app:layout_constraintVertical_bias="0.0" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:orientation="vertical"
         android:padding="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.803">
 
 
         <TextView
@@ -112,20 +88,20 @@
             android:layout_height="wrap_content"
 
             android:layout_marginBottom="8dp"
-            android:text="@string/ciudad"
+            android:text="@string/correo_electronico"
             android:textSize="16sp"
 
             tools:layout_editor_absoluteY="163dp" />
 
         <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/etCiudad"
+            android:id="@+id/etEmail"
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
             android:layout_marginBottom="15dp"
 
-            android:hint="@string/hint_ciudad"
+            android:hint="@string/hint_correo_electronico"
 
             android:maxLines="1"
 
@@ -160,19 +136,40 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnRegistar"
 
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_width="122dp"
+        android:layout_height="46dp"
 
         android:background="#989898"
 
-        android:text="@string/registrar_informacion"
+        android:text="REGISTRAR
+"
         android:textAllCaps="false"
         android:textSize="16sp"
         android:textStyle="bold"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.245"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnEditar"
+
+        android:layout_width="122dp"
+        android:layout_height="46dp"
+
+        android:background="#989898"
+
+        android:text="EDITAR"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        android:textStyle="bold"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.764"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
         app:layout_constraintVertical_bias="1.0" />
@@ -192,7 +189,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="0.954"
         app:tint="@color/white"
         tools:ignore="MissingConstraints" />
 

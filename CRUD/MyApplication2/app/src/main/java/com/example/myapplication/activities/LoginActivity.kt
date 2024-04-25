@@ -11,8 +11,16 @@ import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatEditText
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
 import com.example.myapplication.modelo.Cliente
+import com.google.firebase.Firebase
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.FirebaseDatabase.getInstance
+import com.google.firebase.database.ValueEventListener
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var user: EditText
@@ -21,7 +29,11 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var tvOlvideContraseña: TextView
     private lateinit var tvCrearCuenta: TextView
 
-    private lateinit var cliente: Cliente
+
+    private var firebase:FirebaseDatabase ?= null
+    private var databaseReference:DatabaseReference ?= null
+    private var listaClientes = mutableListOf<Cliente>()
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,8 +46,14 @@ class LoginActivity : AppCompatActivity() {
             insets
         }
         initComponents()
+        firebase = FirebaseDatabase.getInstance()
+        databaseReference = firebase?.getReference("personas")
+        //getData()
 
         btnLogin.setOnClickListener (){
+
+
+
             Log.i("giusepe", "usuario: ${user.text}  password: ${password.text}")
 
             if (user.text.toString() == "admin" && password.text.toString() == "admin" ) {
@@ -62,4 +80,29 @@ class LoginActivity : AppCompatActivity() {
         tvOlvideContraseña = findViewById(R.id.tvOlvideContraseña)
         tvCrearCuenta = findViewById(R.id.tvCrearCuenta)
     }
+
+    private fun getData(){
+        databaseReference?.addValueEventListener(object: ValueEventListener{
+            override fun onDataChange(snapshot: DataSnapshot) {
+                Log.i("0000000000","onCanceled: ${snapshot}")
+                for (ds in snapshot.children){
+                    val id = ds.key?.toInt() ?:0
+                    val nombre = ds.child("nombres").value.toString()
+                    val apellidos = ds.child("apellidos").value.toString()
+                    val email = ds.child("email").value.toString()
+                    val password = ds.child("password").value.toString()
+                    val cliente = Cliente(id,nombre,apellidos,email,password)
+                    listaClientes.add(cliente)
+                }
+                Log.i("0000000000","listSize ${listaClientes.size}")
+
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                Log.i("0000000000","onCanceled: ${error.toException()}")
+            }
+        })}
+
+
 }
+

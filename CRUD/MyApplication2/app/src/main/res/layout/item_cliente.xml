@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginVertical="4dp"
+    app:cardCornerRadius="16dp"
+    app:cardBackgroundColor="#081E43">
+
+    <LinearLayout
+        android:layout_width="335dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="8dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingVertical="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="18dp"
+                android:text="Nombres:"
+                android:textColor="@color/white"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/tvNombres"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="nombre"
+                android:textColor="@color/white"
+                android:textSize="18dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingVertical="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="18dp"
+                android:text="Apellidos:"
+                android:textColor="@color/white"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/tvApellidos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="apellido"
+                android:textColor="@color/white"
+                android:textSize="18dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingVertical="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="18dp"
+                android:text="Correo:"
+                android:textColor="@color/white"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/tvCorreos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="apellido"
+                android:textColor="@color/white"
+                android:textSize="18dp" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
